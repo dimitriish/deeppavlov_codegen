@@ -5,7 +5,7 @@ from tqdm import tqdm
 from typing import Union, Optional
 import os
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.abspath(__file__)) + '/data'
 
 def load_data(split:str, task:str, language:str, settings: Optional[Union[str, list]], length: Optional[str] = None):
     """
