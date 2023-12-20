@@ -17,6 +17,7 @@ class UniXcoder(nn.Module):
         super(UniXcoder, self).__init__()
         self.tokenizer = RobertaTokenizer.from_pretrained(model_name)
         self.config = RobertaConfig.from_pretrained(model_name)
+        self.config.output_attentions = True
         self.config.is_decoder = True
         self.model = RobertaModel.from_pretrained(model_name, config=self.config)
         

@@ -1,0 +1,4 @@
+Random,Jaccard,ES,BM25,Unixcoder,all-MiniLM-L6-v2,all-mpnet-base-v2,msmarco-MiniLM-L-6-v3,msmarco-MiniLM-L-12-v3,msmarco-distilbert-base-v3,msmarco-distilbert-base-v4,msmarco-roberta-base-v3,msmarco-distilbert-base-dot-prod-v3,msmarco-roberta-base-ance-firstp,msmarco-distilbert-base-tas-b,llmrails/ember-v1,thenlper/gte-large
+0.1525,0.17925,0.16092,0.20375,0.23183,0.2355,0.22633,0.20308,0.20867,0.21792,0.21158,0.20008,0.19983,0.20275,0.21908,0.237,0.22183
+0.47042,0.50208,0.479,0.5355,0.57242,0.57217,0.56508,0.54342,0.54733,0.5525,0.53708,0.54017,0.53658,0.53567,0.56117,0.57142,0.56692
+0.78158,0.80375,0.7895,0.81317,0.83717,0.8415,0.84133,0.82308,0.82467,0.83042,0.82358,0.82175,0.81958,0.81825,0.836,0.83508,0.83775
