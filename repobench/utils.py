@@ -1,9 +1,10 @@
 import gzip
-import pickle
 import json
-from tqdm import tqdm
-from typing import Union, Optional
 import os
+import pickle
+from typing import Optional, Union
+
+from tqdm import tqdm
 
 ROOT = os.path.dirname(os.path.abspath(__file__)) + '/data'
 
@@ -96,8 +97,8 @@ def load_data(split:str, task:str, language:str, settings: Optional[Union[str, l
                 if task == "retrieval":
                     # retrieval has easy and hard for each split
                     data[setting] = {
-                        "easy": data[setting]['train']['easy'] + data[setting]['dev']['easy'] + data[setting]['test']['easy'],
-                        "hard": data[setting]['train']['hard'] + data[setting]['dev']['hard'] + data[setting]['test']['hard']
+                        "easy": data[setting]['train']['easy']  + data[setting]['test']['easy'], # dev removed
+                        "hard": data[setting]['train']['hard']  + data[setting]['test']['hard'] # dev removed
                     }
                 elif task == "completion":
                     data[setting] = data[setting]['train'] + data[setting]['dev'] + data[setting]['test']
