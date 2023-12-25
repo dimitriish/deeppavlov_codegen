@@ -49,8 +49,11 @@ for subset in ['easy', 'hard']:
     samples = []
     for i, sample in tqdm(enumerate(raw_samples), total=len(raw_samples)):
         sample['nl_code'] = code_to_nl_batch([sample['code']])[0]
+        sample['nl_next_line'] = code_to_nl_batch([sample['next_line']])[0]
+        
         # sample['nl_context'] = code_to_nl_batch(sample['context'])
         sample['nl_context'] = process_context_in_batches(sample['context'])
+        
         samples.append(sample)
 
     # Convert the samples list to JSON Lines format and save to a file
