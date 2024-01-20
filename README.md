@@ -1,4 +1,3 @@
-"""
 # Symmetric and Asymmetric Code Retrieval Project
 
 ## Models Overview
@@ -76,7 +75,7 @@ data = load_data(split='test', task='retrieval', language='python', settings=['c
 2. Removing docstrings for clearer code representation.
 3. Renaming class and function names to test model robustness.
 4. Removing named arguments from the subsequent line of code.
-![image](https://github.com/dimitriish/deeppavlov_codegen/assets/62793986/6198cea7-7810-4d7b-94ba-b4869c449f91)
+![Снимок экрана 2024-01-20 в 11 12 01](https://github.com/dimitriish/deeppavlov_codegen/assets/67893803/a1a2ccba-bd08-4f66-9316-1bb8b7fe210f)
 
 ### Task-Specific Approaches
 - **Asymmetric Search**: Retrieving the 'gold snippet' using preceding code.
@@ -95,6 +94,7 @@ Original paper metrics
 ### Impact of Code Corruption
 - Analysis on how various code corruption techniques affected the performance of dense and sparse models.
 - Insights on the optimal balance between code integrity and augmentation for effective model training.
+![Снимок экрана 2024-01-20 в 11 10 40](https://github.com/dimitriish/deeppavlov_codegen/assets/67893803/9acc78f0-4b91-4826-a020-9037812ff01d)
 
 ### Comparative Analysis
 - Comparative performance of various models in different retrieval tasks.
