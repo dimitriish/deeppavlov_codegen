@@ -1,11 +1,34 @@
 import gzip
-import pickle
 import json
-from tqdm import tqdm
-from typing import Union, Optional
 import os
+import pickle
+from typing import Optional, Union
+
+from tqdm import tqdm
 
 ROOT = os.path.dirname(os.path.abspath(__file__)) + '/data'
+
+import re
+def remove_docstrings(code):
+    docstring_pattern = r'(""".*?"""|\'\'\'.*?\'\'\')'
+    cleaned_code = re.sub(docstring_pattern, '', code, flags=re.DOTALL)
+    return cleaned_code
+    
+def replace_class_and_function_names(code):
+    """
+    Replace all class and function names in the given code snippet with 'cls' and 'func' respectively.
+    """
+    # Regular expression to find class and function definitions
+    class_pattern = r"\bclass\s+(\w+)"
+    function_pattern = r"\bdef\s+(\w+)"
+
+    # Replace class names with 'cls'
+    replaced_code = re.sub(class_pattern, "class cls", code)
+
+    # Replace function names with 'func', excluding special methods like __init__
+    replaced_code = re.sub(function_pattern, lambda m: "def func" if not m.group(1).startswith('__') else m.group(0), replaced_code)
+
+    return replaced_code
 
 def load_data(split:str, task:str, language:str, settings: Optional[Union[str, list]], length: Optional[str] = None):
     """
@@ -96,8 +119,8 @@ def load_data(split:str, task:str, language:str, settings: Optional[Union[str, l
                 if task == "retrieval":
                     # retrieval has easy and hard for each split
                     data[setting] = {
-                        "easy": data[setting]['train']['easy'] + data[setting]['dev']['easy'] + data[setting]['test']['easy'],
-                        "hard": data[setting]['train']['hard'] + data[setting]['dev']['hard'] + data[setting]['test']['hard']
+                        "easy": data[setting]['train']['easy']  + data[setting]['test']['easy'], # dev removed
+                        "hard": data[setting]['train']['hard']  + data[setting]['test']['hard'] # dev removed
                     }
                 elif task == "completion":
                     data[setting] = data[setting]['train'] + data[setting]['dev'] + data[setting]['test']

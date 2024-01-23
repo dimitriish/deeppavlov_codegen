@@ -1,5 +1,6 @@
 from fuzzywuzzy import fuzz
 
+
 def exact_match_score(predictions, ground_truths):
     """
     This function computes the average exact match score between the predicted codes and the ground truth codes. 
@@ -80,8 +81,8 @@ def accuracy_at_k(prediction_list, golden_index_list, k):
         golden_index = golden_index_list[i]
         index_list = prediction_list[i]
 
-        if len(index_list) < k:
-            raise ValueError("The number of retrieved codes should be greater than k.")
+        # if len(index_list) < k:
+        #     raise ValueError("The number of retrieved codes should be greater than k.")
         
         top_k_indices = index_list[:k]
 

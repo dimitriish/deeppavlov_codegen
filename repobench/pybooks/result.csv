@@ -1,0 +1,9 @@
+Experiment,Symmetric Accuracy@1,Asymmetric Accuracy@1,Mean context size
+random,0.1565289,0.15657510000000002,5722.05025
+baseline,0.81292,0.2775,5722.05025
+without docstrings,0.80467,0.27742,4720.647416666667
+"without class name, func, docs",0.52675,0.25333,4479.877833333333
+"without class name, func, docs, vars, attrib",0.46058,0.234,4627.071166666667
+"next line is without keywords, context is without class name, func, docs, vars, attrib",0.41975,0.234,4627.071166666667
+context - only class and func names,0.787,0.24825,133.11675
+"context - only class, func, attrib, vars names, docstrings",0.7535,0.263,1149.2198333333333
